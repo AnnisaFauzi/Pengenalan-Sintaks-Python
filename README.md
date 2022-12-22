@@ -1,1 +1,0 @@
-# Pengenalan-Sintaks-Python
