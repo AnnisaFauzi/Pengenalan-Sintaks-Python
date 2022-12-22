@@ -1,0 +1,62 @@
+# # soal
+print("Tugas 2")
+print("Gunakan operasi perhitungan fisika matematika untuk menghitung jarak fokus lensa (f) dalam cm")
+print("pada persamaan pembuat lensa 1/f = (n-1)[1/R1 + 1/R2]")
+print("dengan n adalah indeks bias medium = 1.50")
+print("R1 dan R2 adalah jejari kelengkungan permukaan masing-masing 20 cm dan 18 cm")
+print("-----------------------------------------------")
+
+# solusi
+print("Solusi")
+n = 1.50     # indeks bias
+R1 = 20      # Jari-jari kelengkungan 1 (cm)
+R2 = 18      # Jari-jari kelengkungan 2 (cm)
+
+print("n = ", n)
+print("R1 = ", R1)
+print("R2 = ", R2)
+
+F = (n-1)*((1/R1) + (1/R2))         # persamaan fokus lensa
+f = 1/F
+print("Jarak fokus lensa = ",f)
+
+print("**********************************************************************")
+
+
+# soal
+print("Tugas 2")
+print("Perhitungan jarak horizontal atau vertikal paad gerak parabola: x = v0^2sin2a/a*g")
+print("-----------------------------------------------------------")
+
+# solusi
+import numpy as np
+import matplotlib.pyplot as plt
+from numpy import arange,sin,cos
+print("Solusi")
+
+alpha = np.radians(45)   #sudut
+g = 9.8                  # gaya gravitasi
+v0 = 10                  # kecepatan awal
+
+v0x = v0*np.cos(alpha)    # persamaan kecepatan awal pada sumbu x
+v0y = v0*np.sin(alpha)    # persamaan kecepatan awal pada sumbu y
+
+Xmaks = ((v0**2)*np.sin(2*alpha))/(2*g)
+print("Jarak horizontal maksimum =", Xmaks,"m")
+Ymaks = ((v0**2)*(np.sin(2*alpha)**2))/(2*g)
+print("Jarak vertikal maksimum =", Ymaks,"m")
+Tmaks = (2*v0*np.sin(alpha))/g
+print("Waktu maksimum =", Tmaks,"s")
+
+
+t = np.arange(0.0, Tmaks, 0.01)
+y = v0y*t - 0.5*g*t**2
+x = v0x*t
+
+
+plt.plot(x,y)
+plt.title('Grafik Gerak Parabola')
+plt.xlabel('x(m)')
+plt.ylabel('y(m)')
+plt.grid(True)
+plt.show()
